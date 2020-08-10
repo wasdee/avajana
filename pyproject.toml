@@ -1,8 +1,12 @@
 [tool.poetry]
 name = "avajana"
-version = "0.1.0"
-description = ""
+version = "0.2.0"
+description = "Avajana helps chatbot to express/emulate indirect expressions. Currently, it helps with chatbot bubbling. The bubble that happen to the other end of receipient when someone is typing."
 authors = ["Nutchanon Ninyawee <me@nutchanon.org>"]
+maintainers = ["Nutchanon Ninyawee <me@nutchanon.org>"]
+license = "MIT"
+readme = "README.md"
+repository = "https://github.com/sakuguru/avajana"
 
 [tool.poetry.dependencies]
 python = "^3.8"
