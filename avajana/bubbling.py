@@ -3,7 +3,6 @@ import asyncio
 from time import sleep
 from typing import Awaitable, Callable
 
-from halo import Halo
 
 async def call_a_function(func: Callable):
     return_ = func()
@@ -65,21 +64,3 @@ class Bubbling:
         typing_func()
         sleep(duration_sec)
         stop_typing_func()
-
-if __name__ == '__main__':
-    print("starting in ..")
-    for i in range(3,0,-1):
-        print(i)
-        sleep(1)
-    bubling = Bubbling()
-    spinner = Halo(text='Typing', spinner='dots')
-    text_sample = "Accept that because we were born with nothing, we can become anything!"
-    
-    loop = asyncio.get_event_loop()
-    try:
-        loop.run_until_complete(bubling.act_typing(text_sample, spinner.start, spinner.stop))
-    finally:
-        loop.close()
-    print()
-    print(text_sample)
-    print()
