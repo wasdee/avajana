@@ -1,12 +1,13 @@
 import random
 import asyncio
+from inspect import iscoroutine
 from time import sleep
 from typing import Awaitable, Callable
 
 
 async def call_a_function(func: Callable):
     return_ = func()
-    if return_ is Awaitable:
+    if iscoroutine(return_) :
         await return_
 
 class Bubbling:

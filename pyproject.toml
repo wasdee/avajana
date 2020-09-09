@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "avajana"
-version = "0.2.1"
+version = "0.2.2"
 description = "Avajana helps chatbot to express/emulate indirect expressions. Currently, it helps with chatbot bubbling. The bubble that happen to the other end of receipient when someone is typing."
 authors = ["Nutchanon Ninyawee <me@nutchanon.org>"]
 maintainers = ["Nutchanon Ninyawee <me@nutchanon.org>"]
