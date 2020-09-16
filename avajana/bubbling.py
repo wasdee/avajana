@@ -7,8 +7,9 @@ from typing import Awaitable, Callable
 
 async def call_a_function(func: Callable):
     return_ = func()
-    if iscoroutine(return_) :
+    if iscoroutine(return_):
         await return_
+
 
 class Bubbling:
 
@@ -27,7 +28,9 @@ class Bubbling:
         """
         return random.normalvariate(100, 100)
 
-    async def act_typing(self, text, typing_func: Callable, stop_typing_func: Callable, *, non_stop=False):
+    async def act_typing(
+        self, text, typing_func: Callable, stop_typing_func: Callable, *, non_stop=False
+    ):
         """
         This function simulates typing with a resonable pause in a given text.
 
@@ -40,7 +43,11 @@ class Bubbling:
         num_of_word = len(text) / 5
         num_of_sentence = num_of_word // 5
         duration_sec = duration_min * 60
-        num_of_pause = min(round(random.paretovariate(2)), max(num_of_sentence, 3))
+
+        # this pareto dist. aims to make 2/3 = 0
+        num_of_pause = min(
+            round(random.paretovariate(2.64)) - 1, max(num_of_sentence, 3)
+        )
         remain_pause = num_of_pause if not non_stop else 0
         remain_time = duration_sec
         while True:
@@ -57,9 +64,9 @@ class Bubbling:
                 remain_pause -= 1
             await call_a_function(stop_typing_func)
 
-
-
-    def act_typing_simple_sync(self, text, typing_func: callable, stop_typing_func: callable):
+    def act_typing_simple_sync(
+        self, text, typing_func: callable, stop_typing_func: callable
+    ):
         duration_min = len(text) / self.charactor_per_min
         duration_sec = duration_min * 60
         typing_func()

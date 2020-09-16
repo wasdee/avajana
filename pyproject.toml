@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "avajana"
-version = "0.2.2"
+version = "0.3.0"
 description = "Avajana helps chatbot to express/emulate indirect expressions. Currently, it helps with chatbot bubbling. The bubble that happen to the other end of receipient when someone is typing."
 authors = ["Nutchanon Ninyawee <me@nutchanon.org>"]
 maintainers = ["Nutchanon Ninyawee <me@nutchanon.org>"]
@@ -14,6 +14,7 @@ python = "^3.8"
 [tool.poetry.dev-dependencies]
 pytest = "^5.2"
 halo = "^0.0.29"
+pre-commit = "^2.7.1"
 
 [build-system]
 requires = ["poetry>=0.12"]
