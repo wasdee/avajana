@@ -13,7 +13,8 @@ async def call_a_function(func: Callable):
 
 class Bubbling:
 
-    # https://humanbenchmark.com/tests/typing
+    # https://humanbenchmark.com/tests/typing, https://www.reddit.com/r/MechanicalKeyboards/comments/6gqblx/typeracer_wpm_percentiles/
+    # a 80 percentile typing speed
     word_per_min = 80
 
     @property
