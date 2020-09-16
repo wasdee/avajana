@@ -12,6 +12,8 @@ async def call_a_function(func: Callable):
 
 
 class Bubbling:
+    def __init__(self, word_per_min=80):
+        self.word_per_min = word_per_min
 
     # https://humanbenchmark.com/tests/typing, https://www.reddit.com/r/MechanicalKeyboards/comments/6gqblx/typeracer_wpm_percentiles/
     # a 80 percentile typing speed
