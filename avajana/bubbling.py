@@ -12,12 +12,11 @@ async def call_a_function(func: Callable):
 
 
 class Bubbling:
-    def __init__(self, word_per_min=80):
+    def __init__(self, word_per_min=168):
+        # https://humanbenchmark.com/tests/typing, https://www.reddit.com/r/MechanicalKeyboards/comments/6gqblx/typeracer_wpm_percentiles/
+        # a 80 percentile typing speed but we are better than HUMAN isn't it? 555
+        # and Thai contain more character than Eng
         self.word_per_min = word_per_min
-
-    # https://humanbenchmark.com/tests/typing, https://www.reddit.com/r/MechanicalKeyboards/comments/6gqblx/typeracer_wpm_percentiles/
-    # a 80 percentile typing speed
-    word_per_min = 80
 
     @property
     def charactor_per_min(self):
